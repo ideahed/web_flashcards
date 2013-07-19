@@ -1,6 +1,10 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  
+  validates :user_name, presence: true, uniqueness: true
+  validates :password_hash, presence: true
+  validates :email, presence: true
 
   include BCrypt
 
@@ -21,8 +25,7 @@ class User < ActiveRecord::Base
         return user
       end
     end
-
     return nil
-
   end
+
 end
