@@ -1,3 +1,5 @@
 class Deck < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many: cards
+
+  validates :name, presence: true, length: { minimum: 25 }, uniqueness: { case_sensitive: false }
 end
