@@ -65,7 +65,7 @@ DEPENDENCIES
   activesupport
   faker
   pg
-  rake (= 10.1.0)
+  rake
   rspec
   shotgun
   sinatra
