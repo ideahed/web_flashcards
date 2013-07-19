@@ -19,3 +19,8 @@ post '/authenticate_user' do
   end
   erb :index #redirect to index if user/pass incorrect
 end
+
+get '/logout' do
+  session.clear
+  redirect '/'
+end
