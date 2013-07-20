@@ -1,21 +1,19 @@
+enable :sessions
 
 post '/create_user' do
-  p params
   user = User.new(user_name: params[:user_name], email: params[:email])
   user.password = params[:password]
   user.save
+  start_session(user)
+  erb :user_dashboard
 end
-
-enable :sessions
 
 post '/authenticate_user' do
   user = User.authenticate(params[:email], params[:password])
+  p user
   if user
-    session[:id] = user.id
-    session[:user_name] = user.user_name
-    session[:email] = user.email
-    p session
-    erb :user_index
+    start_session(user)
+    return erb :user_dashboard
   end
   erb :index #redirect to index if user/pass incorrect
 end
