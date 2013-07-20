@@ -9,7 +9,11 @@
 
     <div class="decks">
       <%@decks.each do |deck| %>
-        
+        <form action "/start_round" method="post">
+          <input type="submit" value=<%=deck.name%> name="<%=deck.name%>">
+          <br>
+        </form>
+        <%end%>
     </div>
 
 </div>
