@@ -1,9 +1,29 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.login_container {
+  font-family: Arvo;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  margin-left: 20px;
+  margin-top: -300px;
+  text-align: left;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #FF0DBE;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
 }
 th {
   text-align: left;
+}
+
+
+h1 {
+  font-size: 1.5em;
+  color: #FF0DBE;
+}
+
+h3{
+  font-size: .667em;
+  color: #FF0DBE;
 }

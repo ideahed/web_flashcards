@@ -1,6 +1,8 @@
-<div class="container">
-  <h1>Flashcard Application</h1>
+<div class="login_container">
+  <h1>Flash Mash</h1>
+  <h2>Build your own deck,<br> or use one of ours!</h2>
   <h3>Have an account? Login here:</h3>
+  <div class="login>"
   <form action='/authenticate_user' method="post">
     <input type="text" placeholder="Email" name="email">
       <br>
@@ -10,9 +12,11 @@
       <br>
     <input type="submit" value="Sign In">   
   </form>
+</div>
     
   <!-- login form -->
   <h3>New to Web Flashcards? Create an account!</h3>
+  <div class='newuser'>
   <form action='/create_user' method="post">
     <input type="text" placeholder="Username" name="user_name">
     <br>
@@ -25,5 +29,5 @@
     <br>
     <input type="submit" value="Sign Up">
   </form>
-    
+  </div>  
 </div>
