@@ -1,4 +1,18 @@
 <div class="container">
   <h1>Round!</h1>
-    <%= @first_card %>
+    <%= @first_card.definition %>
+    <br>
+     <form action='/guess' method="post">
+          <input type="hidden" value="<%= @first_card.id %>" name="card_id">
+          <input type="hidden" value="<%= @round.id %>" name="round_id">
+          <input type="text" placeholder="Enter Guess" name="guess">
+          <input type="submit" value="Submit Answer!">
+          <br>
+     </form>
+
+     <% if @correct.nil? %>
+      <%= "your answer is correct" %>
+     <% else %>
+      <%= "your answer is incorrect" %>
+     <% end %>
 </div>
