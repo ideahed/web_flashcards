@@ -8,7 +8,7 @@
   text-align: left;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  border: 1px solid #FF0DBE;
+  border: 1px solid #ea4a3c;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
@@ -20,10 +20,10 @@ th {
 
 h1 {
   font-size: 1.5em;
-  color: #FF0DBE;
+  color: #ea4a3c;
 }
 
 h3{
   font-size: .667em;
-  color: #FF0DBE;
+  color: #ea4a3c;
 }
