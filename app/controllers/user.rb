@@ -5,7 +5,7 @@ post '/create_user' do
   user.password = params[:password]
   user.save
   start_session(user)
-  erb :user_dashboard
+  redirect '/user_dashboard'
 end
 
 post '/authenticate_user' do
@@ -13,7 +13,7 @@ post '/authenticate_user' do
   p user
   if user
     start_session(user)
-    return erb :user_dashboard
+    redirect '/user_dashboard'
   end
   erb :index #redirect to index if user/pass incorrect
 end

@@ -1,5 +1,7 @@
-get '/show_decks' do
-  @deck = Deck.all
+get '/user_dashboard' do
+  @decks = Deck.all
+  p Deck.all
+  erb :user_dashboard
 end
 
 post '/start_round' do
