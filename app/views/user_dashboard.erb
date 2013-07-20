@@ -10,8 +10,9 @@
     <div class="decks">
       <% @decks.each do |deck| %>
       <p>Deck Name: <%= deck.name %></p>
-        <form action "/start_round" method="post">
-          <input type="submit" value="Play!" name="<%=deck.name%>">
+        <form action='/start_round' method="post">
+          <input type="hidden" value="<%= deck.id %>" name="id"> 
+          <input type="submit" value="Play!">
           <br>
         </form>
         <%end%>

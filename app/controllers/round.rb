@@ -1,6 +1,9 @@
 post '/start_round' do
-  deck = Deck.find_by_name(params[:deck_name])
-  @card_array = deck.map(&:cards).dup
+  p "~~~~~~~~~~ #{params} ~~~~~~~~~~~~~"
+  deck = Deck.find(params[:id])
+  round = current_user.rounds.create(deck_id: deck.id)  
+  @cards = deck.cards
+  @first_card = @cards.first.definition
 
   erb :round
 end
