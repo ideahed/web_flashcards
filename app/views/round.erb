@@ -1,23 +1,26 @@
 <div class="container">
   <h1>Round!</h1>
-    <% if @first_card %>
-    <%= @first_card.definition %>
+    <% if @current_card %>
+    <%= @current_card.definition %>
     <br>
      <form action='/guess' method="post">
-          <input type="hidden" value="<%= @first_card.id %>" name="card_id">
-          <input type="hidden" value="<%= @round.id %>" name="round_id">
+          <input type="hidden" value="<%= @current_card.id %>" name="card_id">
           <input type="text" placeholder="Enter Guess" name="guess">
           <input type="submit" value="Submit Answer!">
           <br>
      </form>
      <% end %>
-     <% if @correct.nil? %>
-      <%= "Your answer is correct" %>
-     <% else %>
-      <%= "Your answer is incorrect" %>
-     <% end %>
-     <%= "Correct answer: #{@definition}" %>
-     <form action="/next_card" method="get">
+    
+     <% unless @correct.nil? %>
+      <% if @correct %>
+        <%= "Your answer is correct" %>
+      <% else %>
+        <%= "Your answer is incorrect" %>
+        <%= "Correct answer: #{@term}" %>
+      <% end %>
+      <form action="/next_card" method="get">
         <input type="submit" value="Next Card">
-     </form>
+      </form>
+     <% end %>
+     <br>
 </div>
