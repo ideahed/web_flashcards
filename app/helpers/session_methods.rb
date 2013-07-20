@@ -1,4 +1,10 @@
 helpers do
+
+  def logged_in?
+    return true if current_user
+    false
+  end
+
   def current_user
     @current_user ||= User.find(session[:id])
   end

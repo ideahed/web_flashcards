@@ -6,15 +6,19 @@ post '/start_round' do
   erb :round
 end
 
+get '/next_card' do
+
+end
+
 post '/guess' do
   # check term
   card_id = params[:card_id]
   round_id = params[:round_id]
   guess = params[:guess]
 
-  @correct = guess.downcase == Card.find(card_id).term
-  Guess.create(correct: correct, card_id: card_id, round_id: round_id)
-
+  @correct = (guess.downcase == Card.find(card_id).term)
+  Guess.create(correct: @correct, card_id: card_id, round_id: round_id)
+  @definition = Card.find(card_id).definition;
   erb :round
 end
 

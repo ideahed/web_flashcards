@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Round!</h1>
+    <% if @first_card %>
     <%= @first_card.definition %>
     <br>
      <form action='/guess' method="post">
@@ -9,10 +10,14 @@
           <input type="submit" value="Submit Answer!">
           <br>
      </form>
-
-     <% if @correct.nil? %>
-      <%= "your answer is correct" %>
-     <% else %>
-      <%= "your answer is incorrect" %>
      <% end %>
+     <% if @correct.nil? %>
+      <%= "Your answer is correct" %>
+     <% else %>
+      <%= "Your answer is incorrect" %>
+     <% end %>
+     <%= "Correct answer: #{@definition}" %>
+     <form action="/next_card" method="get">
+        <input type="submit" value="Next Card">
+     </form>
 </div>
