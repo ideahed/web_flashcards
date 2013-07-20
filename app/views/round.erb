@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Round!</h1>
+  <% @card_array.each do |card| %>
+      <%= card.definition %>  
+    <% end %>
+  <% render :partial => 'card', :locals => %>
+</div>
