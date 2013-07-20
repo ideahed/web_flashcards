@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Welcome</h1>
     <div class="user">
-      <p><%= user_name %></p>
+      <p><%= current_user.user_name %></p>
       <form action="/logout" method="get">
         <input type="submit" value="Sign Out">
       </form>      

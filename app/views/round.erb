@@ -4,6 +4,7 @@
     <%= @current_card.definition %>
     <br>
      <form action='/guess' method="post">
+          <input type="hidden" value="<%= @round.id %>" name="round_id">
           <input type="hidden" value="<%= @current_card.id %>" name="card_id">
           <input type="text" placeholder="Enter Guess" name="guess">
           <input type="submit" value="Submit Answer!">
@@ -18,9 +19,7 @@
         <%= "Your answer is incorrect" %>
         <%= "Correct answer: #{@term}" %>
       <% end %>
-      <form action="/next_card" method="get">
-        <input type="submit" value="Next Card">
-      </form>
+      <a href="/round/<%= @round.id %>/next_card">next card</a>
      <% end %>
      <br>
 
