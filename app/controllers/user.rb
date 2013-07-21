@@ -28,3 +28,14 @@ get '/user_dashboard' do
 
   erb :user_dashboard
 end
+
+get '/new_deck'do
+
+erb :create_deck
+  
+end
+
+post '/create_deck' do
+
+
+end
