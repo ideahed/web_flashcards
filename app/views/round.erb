@@ -21,14 +21,5 @@
       <% end %>
       <a href="/round/<%= @round.id %>/next_card">next card</a>
      <% end %>
-     <br>
-
-  <%= @first_card.definition %>
-  <br>
-  <form action="/user_guess"  method="post">
-    <input type="hidden" value="<%=@ first_card.id %>"name="card.id">
-    <input type="hidden" value="<%= @round.id %>" name="round_id">
-    <input type="text" placeholder="Enter Guess" name="guess">
-    <input type="submit" value="Submit Answer!"> 
-  </form>
+    <br>
 </div>
