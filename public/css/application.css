@@ -1,4 +1,39 @@
-.login_container {
+
+
+.background {
+  position: fixed;
+  left: 250px;
+  top:50%;
+ /* background-image: url("http://i3.minus.com/ibuIQhFc46eAu2.JPG");
+  background-repeat: no-repeat;*/
+  width: 700px;
+  height: 507px;
+  margin: -300px 100px 0 -25px;
+  overflow: hidden;
+  background: cover;
+}
+.background img {
+  width: 100%;
+}
+.container {
+  font-family: Arvo;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  height: 465px;
+  margin-left: 20px;
+  margin-top: -300px;
+  text-align: left;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  background-color: #FEFDFF;
+}
+
+/*.login_container {
   font-family: Arvo;
   position: fixed;
   top: 50%;
@@ -11,8 +46,8 @@
   border: 1px solid #ea4a3c;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 10px;
-}
+  padding-left: 10px;*/
+
 th {
   text-align: left;
 }
@@ -27,3 +62,72 @@ h3{
   font-size: .667em;
   color: #ea4a3c;
 }
+
+/*.user_dashboard_container {
+  font-family: Arvo;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  height: 400px;
+  margin-left: 20px;
+  margin-top: -300px;
+  text-align: left;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  }
+*/
+.decks p {
+  position: relative;
+/*  top: 50%;*/
+  width: 150px;
+  margin-left: 0px;
+/*  margin-top: 200px;*/
+  text-align: left;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  }
+
+.stats th tr {
+  float: right;
+ /* top: 50%;*/
+  width: 300px;
+  height: 465px;
+  margin-right: -600px;
+  margin-top: -400px;
+  text-align: right;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  background-color: #FEFDFF;
+}
+
+.stats th tr {
+  padding: 60px;
+}
+  
+  /*.round_container {
+  font-family: Arvo;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  margin-left: 20px;
+  margin-top: -300px;
+  text-align: left;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  }*/
