@@ -17,5 +17,14 @@
         </form>
         <%end%>
     </div>
-
+        
+    <% rounds = Round.where(user_id: User.find(current_user))%>
+    <% if rounds.size > 0 %>
+      <% rounds.each do |round| %>
+        <div class="stats">
+          <p><%= Deck.find(round.deck_id).name %></p>
+          <p><%= %>
+        </div>
+      <%end%>
+    <%end%>
 </div>

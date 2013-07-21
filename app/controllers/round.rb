@@ -35,8 +35,8 @@ get '/next_card' do
     return erb :round
   end
 
-  get '/show_stats'
-    
-  end
+  # get '/show_stats'
+
+  # end
 
 end
