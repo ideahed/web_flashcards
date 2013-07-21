@@ -24,7 +24,7 @@ helpers do
     if current_deck_correct_guesses(round) == 0
       return 0
     else
-      current_deck_size(round) / current_deck_correct_guesses(round)
+      ((current_deck_correct_guesses(round).to_f / current_deck_size(round)) * 100).to_i
     end
   end
   

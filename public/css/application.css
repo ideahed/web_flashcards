@@ -82,10 +82,10 @@ h3{
 */
 .decks p {
   position: relative;
-  top: 50%;
+/*  top: 50%;*/
   width: 150px;
   margin-left: 0px;
-  margin-top: 200px;
+/*  margin-top: 200px;*/
   text-align: left;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -95,13 +95,13 @@ h3{
   padding-left: 10px;
   }
 
-.stats {
+.stats th tr {
   float: right;
-  top: 50%;
-  width: 150px;
+ /* top: 50%;*/
+  width: 300px;
   height: 465px;
   margin-right: -600px;
-  margin-top: -427px;
+  margin-top: -400px;
   text-align: right;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -110,6 +110,10 @@ h3{
   padding-bottom: 20px;
   padding-right: 10px;
   background-color: #FEFDFF;
+}
+
+.stats th tr {
+  padding: 60px;
 }
   
   /*.round_container {
