@@ -1,7 +1,10 @@
+<div class="background">
+  <img src="http://i3.minus.com/ibuIQhFc46eAu2.JPG" alt="alt" />
+</div>
 <div class="container">
-    <h1>Welcome</h1>
+    <h1>Welcome <%= current_user.user_name %>!</h1>
     <div class="user">
-      <p><%= current_user.user_name %></p>
+      <p></p>
       <form action="/logout" method="get">
         <input type="submit" value="Sign Out">
       </form>      
@@ -17,9 +20,10 @@
         </form>
         <%end%>
     </div>
-        
+
     <% rounds = Round.where(user_id: User.find(current_user))%>
     <% if rounds.size > 0 %>
+
     <div class="stats">
       <table border="1">
       <tr>
@@ -42,8 +46,17 @@
             <% end %>
           </td>
           </tr>
+
+      <% rounds.each do |round| %>
+        <div class="stats">
+          <h1>Your Statistics</h1>
+          <p><%= Deck.find(round.deck_id).name %></p>
+          <p><%= %>
+        </div>
+
       <%end%>
       </table>
       </div>
     <%end%>
 </div>
+
