@@ -22,3 +22,9 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
+get '/user_dashboard' do 
+  @decks = Deck.all
+
+  erb :user_dashboard
+end
