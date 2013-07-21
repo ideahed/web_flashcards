@@ -1,54 +1,51 @@
 .container {
   position: fixed;
-  width: 900;
-  height: 500;
-  top: 25%;
-  left: 25%;
-  margin-top: -100px;
-  margin-left: -230px;
-}
-
-.background {
-  position: absolute;
-  left: 250px;
-  /*top:50%;*/
- /* background-image: url("http://i3.minus.com/ibuIQhFc46eAu2.JPG");
-  background-repeat: no-repeat;*/
-  width: 685px;
-  height: 498px;
-  /*margin: -300px 100px 0 -25px;*/
-  overflow: hidden;
-  /*background: cover;*/
-}
-/*.background img {
   width: 100%;
-}*/
-.left_tab{
-  width: 300px;
-  height: 475px;
-  position: absolute;
-  top: 50%;
-  margin-top: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  height: 100%;
+}
+.background {
+position: fixed;
+  left: 200px;
+  top: 185px;
+  /*background-image: url("http://i3.minus.com/ibuIQhFc46eAu2.JPG");*/
+  background-repeat: no-repeat;*/
+  width: 800px;
+  height: 500px;
+  overflow: hidden;*/
+}
+.background img {
+  width: 100%;
+}
+.side_tab {
   font-family: Arvo;
-  font-size: 1em;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  height: 465px;
+  left: 10px;
+  margin-top: -300px;
   text-align: left;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   border: 1px solid #ea4a3c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
   background-color: #FEFDFF;
-  z-index: 5px;
   overflow: auto;
 }
 
-.right_tab {
+.user {
   position: absolute;
-  left: 700px;
+  bottom: 0;
+  margin-bottom: 10px ;
+}
+
+.stats {
   font-size: .667em;
-  width: 200px;
-  height: 100px;
+  position: relative;
+  left: 227%;
+ /* top: 50%;*/
   text-align: right;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -57,6 +54,13 @@
   padding-bottom: 20px;
   color: #FEFDFF;
   background-color: #ea4a3c;
+}
+
+.stats table {
+  /*position: fixed;
+  width: 20%;
+  height: 20%;*/
+  border: 1px solid #FEFDFF;
 }
 /*.login_container {
   font-family: Arvo;
@@ -83,9 +87,6 @@ h1 {
   color: #ea4a3c;
 }
 
-h2 {
-  font-size: 1em;
-}
 h3{
   font-size: .667em;
   color: #ea4a3c;
@@ -113,14 +114,13 @@ input[type="submit"]{
 /*  position: relative;*/
 /*  top: 50%;*/
   width: 150px;
+  height: 20px;
   margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   text-align: left;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border: 1px solid #ea4a3c;
-  padding-top: 5px;
+  padding-top: 2px;
   padding-bottom: 5px;
   padding-left: 5px;
   color: #FEFDFF;
@@ -129,14 +129,34 @@ input[type="submit"]{
 
 
 
-.right_tab table {
-  position: absolute;
-  left: 20px;
-  border: 1px solid #FEFDFF;
+.guess-front {
+  width: 250px;
+  font-size: .667em;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding: 5px;
+  margin-right: 10px
+}
 
-
+.guess-back {
+  width: 250px;
+  font-size: .667em;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #ea4a3c;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #ea4a3c;
 }
   
+.next_card a {
+  font-size: 2em;
+  position: absolute;
+  bottom: 0;
+  padding-top: 100;
+} 
+
   /*.round_container {
   font-family: Arvo;
   position: fixed;

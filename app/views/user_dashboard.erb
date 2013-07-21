@@ -1,32 +1,31 @@
-<div class="background">
-  <img src="http://i3.minus.com/ibuIQhFc46eAu2.JPG" alt="alt" />
-</div>
 <div class="container">
+  <div class="background">
+    <img src="http://i3.minus.com/ibuIQhFc46eAu2.JPG" alt="alt" />
+  </div>
+  <div class="left_tab">
     <h1>Welcome <%= current_user.user_name %>!</h1>
+    <div class="decks">
+      <% @decks.each do |deck| %>
+     <!--  <p><%= deck.name %></p>
+ -->  <form action='/start_round' method="post">
+        <input type="hidden" value="<%= deck.id %>" name="id"> 
+        <input type="submit" value="<%= deck.name.upcase %>">
+          <br>
+      </form>
+      <%end%>
+    </div>
+     <div>
+     <a href="/new_deck">Make a new Deck</a>
+     </div>
     <div class="user">
       <p></p>
       <form action="/logout" method="get">
         <input type="submit" value="Sign Out">
-      </form>      
-    <div>
-
-    <div>
-      <a href="/new_deck">Make a new Deck</a>
-    </div>
-
-    <div class="decks">
-      <% @decks.each do |deck| %>
-     <!--  <p><%= deck.name %></p>
- -->        <form action='/start_round' method="post">
-          <input type="hidden" value="<%= deck.id %>" name="id"> 
-          <input type="submit" value="<%= deck.name.upcase %>">
-          <br>
-        </form>
-        <%end%>
-    </div>
-
+      </form> 
+    </div> 
+  </div>
+  <div class="right_tab">
     <% if player_rounds.size > 0 %>
-    <div class="stats">
       <table border="1">
       <tr>
         <th>Deck</th>
@@ -41,6 +40,7 @@
           </tr>
       <%end%>
       </table>
-      </div>
     <%end%>
+  </div>
 </div>
+
