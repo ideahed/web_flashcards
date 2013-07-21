@@ -20,11 +20,30 @@
         
     <% rounds = Round.where(user_id: User.find(current_user))%>
     <% if rounds.size > 0 %>
-      <% rounds.each do |round| %>
-        <div class="stats">
-          <p><%= Deck.find(round.deck_id).name %></p>
-          <p><%= %>
-        </div>
+    <div class="stats">
+      <table border="1">
+      <tr>
+        <th>Deck Name</th>
+        <th>Size</th>
+        <th>% Correct</th>
+      </tr>
+    <% rounds.each do |round| %>
+          <tr>
+            <%cur_deck = Deck.find(round.deck_id) %>
+          <td><%= cur_deck.name %></td>
+          <% deck_size = Card.where(deck_id: cur_deck.id).size %>
+          <% correct_guesses = round.guesses.where(correct: 1).size %>
+          <td><%= deck_size %></td>
+          <td>
+            <% if correct_guesses == 0 %>
+              <%= 0 %>
+              <% else %>
+                <%= deck_size / correct_guesses.to_f %>
+            <% end %>
+          </td>
+          </tr>
       <%end%>
+      </table>
+      </div>
     <%end%>
 </div>

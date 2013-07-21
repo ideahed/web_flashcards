@@ -26,14 +26,9 @@ get '/round/:round_id/next_card' do
   else
     erb :round
   end
-<<<<<<< HEAD
   
-end
-=======
-
   # get '/show_stats'
 
   # end
 
 end
->>>>>>> display_stats
