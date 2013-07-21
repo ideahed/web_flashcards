@@ -1,7 +1,7 @@
 post '/start_round' do
   deck = Deck.find(params[:id])
   @round = current_user.rounds.create(deck_id: deck.id)
-  @current_card = deck.cards.first
+  @current_card = deck.cards.sample
   erb :round
 end
 
@@ -19,6 +19,7 @@ end
 get '/round/:round_id/next_card' do 
   @round = Round.find(params[:round_id])
 
+  # currently, in each refresh the term updates but doesn't save anything
   @current_card = @round.deck.cards.where('id not in (?)', @round.guesses.pluck(:card_id)).sample
 
   if @current_card.nil? 
