@@ -1,1 +1,23 @@
-<p>I'm here</p>
+<div class='container'>
+  <div>
+  	<h3>Create a Deck</h3>
+    <form action='/create_deck' method="post">
+       <input type="text" placeholder="Deck Name" name="deck[name]">
+       <br>
+       <br>
+       <input type="text" placeholder="Card Term" name="cards[][term]">
+       <br>
+       <br>
+       <textarea  rows="10" cols="30" placeholder="Card Definition" name="cards[][definition]"></textarea>
+       <br>
+       <br>
+      <div id='add-more-cards'></div>
+      <input id='add-another-card' type="button" value="add another card">
+      <input type="submit" value="submit">
+    </form>
+
+    <div id="partial">
+      <%= erb :_add_card, :layout => false %>  
+    </div>
+  </div> 
+</div> 

@@ -13,7 +13,10 @@ post '/guess' do
   @correct = (guess.downcase == Card.find(card_id).term)
   @round.guesses.create(correct: @correct, card_id: card_id)
   @term = Card.find(card_id).term
-  erb :round
+
+  content_type :json
+  {correct: @correct, term: @term, round_id: @round.id}.to_json
+  # # erb :round
 end
 
 get '/round/:round_id/next_card' do 

@@ -31,11 +31,12 @@ end
 
 get '/new_deck'do
 
-erb :create_deck
-  
+  erb :create_deck
 end
 
 post '/create_deck' do
-
-
+  deck = Deck.create(params[:deck])
+  params[:cards].each { |card| deck.cards.create(card) }
+  
+  redirect '/user_dashboard'  
 end
