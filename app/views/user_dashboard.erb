@@ -10,12 +10,16 @@
       </form>      
     <div>
 
+    <div>
+      <a href="/new_deck">Make a new Deck</a>
+    </div>
+
     <div class="decks">
       <% @decks.each do |deck| %>
-      <p>Deck Name: <%= deck.name %></p>
-        <form action='/start_round' method="post">
+     <!--  <p><%= deck.name %></p>
+ -->        <form action='/start_round' method="post">
           <input type="hidden" value="<%= deck.id %>" name="id"> 
-          <input type="submit" value="Play!">
+          <input type="submit" value="<%= deck.name.upcase %>">
           <br>
         </form>
         <%end%>
