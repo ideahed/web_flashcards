@@ -34,4 +34,9 @@ get '/next_card' do
     @current_card = deck[0].cards.find(next_card_id)
     return erb :round
   end
+
+  get '/show_stats'
+    
+  end
+
 end
