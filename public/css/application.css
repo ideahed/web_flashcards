@@ -1,23 +1,25 @@
 .container {
   position: fixed;
-  width: 900;
-  height: 500;
+  width: 900px;
+  height: 502px;
   top: 25%;
   left: 25%;
   margin-top: -100px;
   margin-left: -230px;
+  overflow: hidden;
+
 }
 
 .background {
   position: absolute;
-  left: 250px;
+  left: 100px;
   /*top:50%;*/
- /* background-image: url("http://i3.minus.com/ibuIQhFc46eAu2.JPG");
-  background-repeat: no-repeat;*/
-  width: 685px;
-  height: 498px;
-  /*margin: -300px 100px 0 -25px;*/
+  /*background-image: url("http://i3.minus.com/ibuIQhFc46eAu2.JPG");
+  background-repeat: no-repeat*/
   overflow: hidden;
+/*  width: 685px;
+  height: 498px;
+*/  /*margin: -300px 100px 0 -25px;*/
   /*background: cover;*/
 }
 /*.background img {
@@ -25,9 +27,8 @@
 }*/
 .left_tab{
   width: 300px;
-  height: 475px;
+  height: 480px;
   position: absolute;
-  top: 50%;
   margin-top: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -45,18 +46,25 @@
 
 .right_tab {
   position: absolute;
-  left: 700px;
+  bottom: 0;
+  right: 0;
   font-size: .667em;
   width: 200px;
-  height: 100px;
+  /*height: 100px;*/
   text-align: right;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  border: 1px solid #FEFDFF;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
   color: #FEFDFF;
   background-color: #ea4a3c;
+  clear: both;
+}
+
+.right_tab table {
+  left: 15px;
+  border: 1px solid #FEFDFF;
 }
 /*.login_container {
   font-family: Arvo;
@@ -127,14 +135,38 @@ input[type="submit"]{
   background-color: #ea4a3c;
   }
 
+input[type='button']{
+  font-size: .667em;
+/*  position: relative;*/
+/*  top: 50%;*/
+  width: 150px;
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid #ea4a3c;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  color: #FEFDFF;
+  background-color: #ea4a3c;
+  }
 
+a:link {
+  font-size: .667em;
+  color: #FEFDFF;
+}
 
-.right_tab table {
-  position: absolute;
-  left: 20px;
-  border: 1px solid #FEFDFF;
+a:visited {
+  font-size: .667em;
+  color: #ea4a3c;
+}
 
-
+.left_tab textarea {
+  line-height: .667em
+  overflow: auto;
 }
   
   /*.round_container {
