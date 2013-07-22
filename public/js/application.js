@@ -29,13 +29,13 @@ $(document).ready(function() {
     }
   });
 
-  // $('#user_email').on('keyup', function(){
-  //   if ($(this).val().length >= ) {
-  //     $('#user_email_check').show();
-  //   } else {
-  //     $('#user_email_check').hide();
-  //   }
-  // });
+  $('#user_email').on('keyup', function(){
+    if ($(this).val().search(/.+@.+[.].+/) != -1) {
+      $('#user_email_check').show();
+    } else {
+      $('#user_email_check').hide();
+    }
+  });
 
   $('#user_pass').on('keyup', function(){
     if ($(this).val().length >= 4) {

@@ -165,6 +165,11 @@ a:visited {
   bottom: 0;
 }
 
+.check {
+  display: inline;
+  color: green;
+  left: -20px;
+}
 
   /*.round_container {
   font-family: Arvo;
