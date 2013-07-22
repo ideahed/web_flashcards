@@ -1,16 +1,53 @@
 $(document).ready(function() {
   // CSS/Javascript page styling...
-  $('body').css('display', 'none');
-  $('body').fadeIn(1000);
+  // $('body').css('display', 'none');
+  // $('body').fadeIn(1000);
   
-  $('.link').click(function() {
-  event.preventDefault();
-  newLocation = this.href;
-  $('body').fadeOut(1000, newpage);
+  // $('.link').click(function() {
+  // event.preventDefault();
+  // newLocation = this.href;
+  // $('body').fadeOut(1000, newpage);
+  // });
+  // function newpage() {
+  // window.location = newLocation;
+  // }
+
+  // Client side signup text field validations
+  // $('#user_name').validate({
+  //   // console.log('yuuuup!');
+  //   onkeyup: function () {
+  //     $('.left_tab').append("<p>'YESSSS!'</p>");
+  //   }
+  // });
+
+  // function checkBox() {
+  $('#user_name').on('keyup', function(){
+    console.log("got it");
+    if ($(this).val().length >= 4) {
+      $('#user_name_check').show();
+    } else {
+      $('#user_name_check').hide();
+    }
   });
-  function newpage() {
-  window.location = newLocation;
-  }
+
+  $('#user_email').on('keyup', function(){
+    console.log("got it");
+    if ($(this).val().length >= 4) {
+      $('#user_email_check').show();
+    } else {
+      $('#user_email_check').hide();
+    }
+  });
+
+  $('#user_pass').on('keyup', function(){
+    console.log("got it");
+    if ($(this).val().length >= 4) {
+      $('#user_pass_check').show();
+    } else {
+      $('#user_pass_check').hide();
+    }
+  });
+
 
   // Ajax for accepting a guess and returning the guess result
   $('.card').on('submit', '#guess', function(e) {
@@ -41,7 +78,6 @@ $(document).ready(function() {
         type: 'GET',
         url: $(this).find('a').attr('href')
       }).done(function(msg) {
-        console.log(msg);
         if (msg.redirect) {
             // data.redirect contains the string URL to redirect to
             $('.answer').html("<div>Deck Finished! There were " + msg.num_cards + " cards and you got " + msg.percentage +"% correct.</div>");

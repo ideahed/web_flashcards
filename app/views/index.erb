@@ -16,16 +16,13 @@
       <input type="submit" value="Sign In">   
     </form>
     <h3>New to Flash Mash? Create an account!</h3>
-    <form action='/create_user' method="post">
-      <input type="text" placeholder="Username" name="user_name">
-      <br>
-      <br>
-      <input type="text" placeholder="Email" name="email">
-      <br>
-      <br>
-      <input type="password" placeholder="Password" name="password">
-      <br>
-      <br>
+    <form id='create_user' action='/create_user' method="post">
+      <input id='user_name' type="text" placeholder="Username" name="user_name" required>
+      <div id='user_name_check' style="display: none;">CHECK</div>
+      <input id='user_email' type='email' placeholder="Email" name="email" required>
+      <div id='user_email_check' style="display: none;">CHECK</div>
+      <input id='user_pass' type="password" placeholder="Password" name="password" required>
+      <div id='user_pass_check' style="display: none;">CHECK</div>
       <input type="submit" value="Sign Up">
     </form>
   </div>
