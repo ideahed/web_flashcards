@@ -30,9 +30,7 @@
   height: 480px;
   position: absolute;
   margin-top: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding: 10px 0px 10px 10px;
   font-family: Arvo;
   font-size: 1em;
   text-align: left;
@@ -54,9 +52,7 @@
   text-align: right;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding: 20px 0px 20px 20px;
   color: #FEFDFF;
   background-color: #ea4a3c;
   clear: both;
@@ -104,9 +100,7 @@ input[type="submit"]{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border: 1px solid #ea4a3c;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding: 5px 0px 5px 5px;
   color: #FEFDFF;
   background-color: #ea4a3c;
   }
@@ -123,20 +117,46 @@ input[type='button']{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border: 1px solid #ea4a3c;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding: 5px 0px 5px 5px;
   color: #FEFDFF;
   background-color: #ea4a3c;
   }
  
 a:link {
+  position: relative;
+  top: 235px;
   font-size: .667em;
-  color: #ea4a3c;
+  color: #FEFDFF;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 7px 48px 5px 5px;
+  color: #FEFDFF;
+  background-color: #ea4a3c;
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+
 }
  
+a:visited {
+  position: relative;
+  display: inline block;
+  bottom: 0px;
+  font-size: .667em;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px 50px 5px 5px;
+  color: #FEFDFF;
+  background-color: #ea4a3c;
+  width: 150px;
+  margin-left: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
 .left_tab textarea {
-  line-height: .667em
+  line-height: .667em;
   overflow: auto;
 }
  
