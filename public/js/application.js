@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // CSS/Javascript page styling...
   $('body').css('display', 'none');
   $('body').fadeIn(1000);
   
@@ -11,64 +12,53 @@ $(document).ready(function() {
   window.location = newLocation;
   }
 
-  // Ajax for cards:
-  $('#guess').on('submit', function(e) {
-      console.log($(this));
-      console.log(this.method);
-      console.log(this.action);
-      console.log($(this).serialize())
-
+  // Ajax for accepting a guess and returning the guess result
+  $('.card').on('submit', '#guess', function(e) {
       e.preventDefault();
-
       $.ajax({
         type: this.method,
         url: this.action,
         data: $(this).serialize()
       }).done(function(msg) {
           var output;
-          console.log(msg);
           if (msg.correct == true) {
             output = "That's correct!";
           }
           else {
             output = "Nope, incorrect answer.";
           }
-          $('.card').text(output);
-          $('.card').append("<br> <a href=\"/round/" + msg.round_id + "/next_card\">Next Card</a>");
+          $('.card').hide();
+          $('.output').html(output);
+          $('#next_card').html("<a href='/round/" + msg.round_id + "/next_card'>Next Card</a>");
+          $('.answer').show();          
+      });
+    });
+
+  // Ajax for getting the next card from the deck.
+  $('#next_card').on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'GET',
+        url: $(this).find('a').attr('href')
+      }).done(function(msg) {
+        console.log(msg);
+        if (msg.redirect) {
+            // data.redirect contains the string URL to redirect to
+            console.log("in redirect!");
+            console.log(msg.redirect);
+            window.location.href = msg.redirect;
+        }
+        else {
+          $('.answer').hide();
+          $('.card').html(msg.definition + "<form id='guess' action='/guess' method='post'><input type='hidden' value=" + msg.round_id + " name='round_id'><input type='hidden' value=" + msg.card_id + " name='card_id'><input type='text' placeholder='Enter Guess' name='guess'><input type='submit' value='Submit Answer!'><br></form>").show();
+        }
       });
     });
 
 
-  $('#add-another-card').on('click', function(){
+   // Add a new deck
+  $('#add-another-card').on('click', function() {
   	$(".add-card").clone().toggle().prependTo("#add-more-cards");
   });
-// var this_method = function(msg) {
-//           console.log("success!");
-//           console.log(msg);
-//           var output;
-//           // console.log(msg.correct);
-//           if (msg.correct == true) {
-//             output = "That's correct!";
-//           }
-//           else
-//             output = "Nope, incorrect answer.";
-//           }
-//           $('.card').text("wheee!");
-// };
 
-
-// 1
-// 2
-// 3
-// 4
-// 5
-// 6
-// 7
-// $.ajax({
-//   type: "POST",
-//   url: "some.php",
-//   data: { name: "John", location: "Boston" }
-// }).done(function( msg ) {
-//   alert( "Data Saved: " + msg );
-// });
 });

@@ -2,11 +2,11 @@
   <div class="background">
     <img src="http://i3.minus.com/ibuIQhFc46eAu2.JPG" alt="alt" />
   </div>
+
   <div class="left_tab">
   <h1>Round!</h1>
-    <% if @current_card %>
     <div class="card">
-    <%= @current_card.definition %>
+      <%= @current_card.definition %>
      <form id="guess" action='/guess' method="post">
           <input type="hidden" value="<%= @round.id %>" name="round_id">
           <input type="hidden" value="<%= @current_card.id %>" name="card_id">
@@ -14,20 +14,12 @@
           <input type="submit" value="Submit Answer!">
           <br>
      </form>
-     <% end %>
     </div>
-      
-  <% unless @correct.nil? %>
-     <div class="answer">
-      <% if @correct %>
-        <%= "Your answer is correct" %>
-      <% else %>
-        <%= "Your answer is incorrect" %>
-        <%= "Correct answer: #{@term}" %>
-      <% end %>
-      <a href="/round/<%= @round.id %>/next_card">next card</a>
-     <% end %>
-     </div>
-    <br>
+    
+    <div class="answer">
+      <div class="output"></div>
+      <div id='next_card'></div>
+    </div>
   </div>
+
 </div>

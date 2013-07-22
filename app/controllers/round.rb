@@ -1,3 +1,4 @@
+# Starts a round, randomly selects a card from the deck and returns it to round.erb to kick round off.
 post '/start_round' do
   deck = Deck.find(params[:id])
   @round = current_user.rounds.create(deck_id: deck.id)
@@ -5,6 +6,7 @@ post '/start_round' do
   erb :round
 end
 
+# Take in the user guess and compare it to the actual guess, return if they got it correct or not and the round id.
 post '/guess' do
   card_id = params[:card_id]
   guess = params[:guess]
@@ -12,23 +14,22 @@ post '/guess' do
 
   @correct = (guess.downcase == Card.find(card_id).term)
   @round.guesses.create(correct: @correct, card_id: card_id)
-  @term = Card.find(card_id).term
 
   content_type :json
-  {correct: @correct, term: @term, round_id: @round.id}.to_json
-  # # erb :round
+  {correct: @correct, round_id: @round.id}.to_json
 end
 
+# Get the next card from the deck. If no cards left, return a redirect to user dashboard.
 get '/round/:round_id/next_card' do 
   @round = Round.find(params[:round_id])
 
-  # currently, in each refresh the term updates but doesn't save anything
   @current_card = @round.deck.cards.where('id not in (?)', @round.guesses.pluck(:card_id)).sample
 
-  if @current_card.nil? 
-    redirect '/user_dashboard'
+  content_type :json
+  if @current_card.blank? 
+    {redirect: '/user_dashboard'}.to_json
   else
-    erb :round
+    {definition: @current_card.definition, card_id: @current_card.id, round_id: @round.id}.to_json
   end
 end
 
