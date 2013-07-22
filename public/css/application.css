@@ -7,9 +7,9 @@
   margin-top: -100px;
   margin-left: -230px;
   overflow: hidden;
-
+ 
 }
-
+ 
 .background {
   position: absolute;
   left: 100px;
@@ -43,28 +43,7 @@
   z-index: 5px;
   overflow: auto;
 }
-
-/*input:required:valid {
-  background-image: url(/images/valid.png);
-  background-position: right top;
-  background-repeat: no-repeat;
-}*/
-
-/*input:required:invalid {
-  background-image: url(../images/check_mark.png);
-  background-position: right top;
-  background-color: red;
-}*/
-
-#create_user {
-  position: inline-block;
-}
-
-.check {
-  color: green;
-  position: inline;
-}
-
+ 
 .right_tab {
   position: absolute;
   bottom: 0;
@@ -82,36 +61,28 @@
   background-color: #ea4a3c;
   clear: both;
 }
-
+.stats_container {
+  max-height: 200px;
+  overflow: auto;
+  padding-right: 5px;
+ 
+}
 .right_tab table {
   left: 15px;
   border: 1px solid #FEFDFF;
+ 
 }
-/*.login_container {
-  font-family: Arvo;
-  position: fixed;
-  top: 50%;
-  width: 300px;
-  margin-left: 20px;
-  margin-top: -300px;
-  text-align: left;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border: 1px solid #ea4a3c;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;*/
-
+ 
 th {
   text-align: left;
 }
-
-
+ 
+ 
 h1 {
   font-size: 1.5em;
   color: #ea4a3c;
 }
-
+ 
 h2 {
   font-size: 1em;
 }
@@ -119,24 +90,8 @@ h3{
   font-size: .667em;
   color: #ea4a3c;
 }
-
-/*.user_dashboard_container {
-  font-family: Arvo;
-  position: fixed;
-  top: 50%;
-  width: 300px;
-  height: 400px;
-  margin-left: 20px;
-  margin-top: -300px;
-  text-align: left;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border: 1px solid #ea4a3c;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  }
-*/
+ 
+ 
 input[type="submit"]{
   font-size: .667em;
 /*  position: relative;*/
@@ -155,7 +110,7 @@ input[type="submit"]{
   color: #FEFDFF;
   background-color: #ea4a3c;
   }
-
+ 
 input[type='button']{
   font-size: .667em;
 /*  position: relative;*/
@@ -174,20 +129,20 @@ input[type='button']{
   color: #FEFDFF;
   background-color: #ea4a3c;
   }
-
+ 
 a:link {
-  font-size: .667em;
-  color: #FEFDFF;
-}
-
-a:visited {
   font-size: .667em;
   color: #ea4a3c;
 }
-
+ 
 .left_tab textarea {
   line-height: .667em
   overflow: auto;
+}
+ 
+.user {
+  position: absolute;
+  bottom: 0;
 }
   
   /*.round_container {
