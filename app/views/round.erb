@@ -4,7 +4,7 @@
   </div>
 
   <div class="left_tab">
-  <h1>Round!</h1>
+  <h1><%=@deck.name%></h1>
     <div class="card">
       <%= @current_card.definition %>
      <form id="guess" action='/guess' method="post">
@@ -20,6 +20,7 @@
       <div class="output"></div>
       <div id='next_card'></div>
     </div>
+    <div id='dash_redirect'></div>
   </div>
 
 </div>

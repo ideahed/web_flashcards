@@ -1,8 +1,8 @@
 # Starts a round, randomly selects a card from the deck and returns it to round.erb to kick round off.
 post '/start_round' do
-  deck = Deck.find(params[:id])
-  @round = current_user.rounds.create(deck_id: deck.id)
-  @current_card = deck.cards.sample
+  @deck = Deck.find(params[:id])
+  @round = current_user.rounds.create(deck_id: @deck.id)
+  @current_card = @deck.cards.sample
   erb :round
 end
 
@@ -27,7 +27,7 @@ get '/round/:round_id/next_card' do
 
   content_type :json
   if @current_card.blank? 
-    {redirect: '/user_dashboard'}.to_json
+    {num_cards: current_deck_size(@round), percentage: current_deck_guess_percentage(@round), redirect: '/user_dashboard'}.to_json
   else
     {definition: @current_card.definition, card_id: @current_card.id, round_id: @round.id}.to_json
   end

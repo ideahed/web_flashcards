@@ -29,7 +29,7 @@ $(document).ready(function() {
           }
           $('.card').hide();
           $('.output').html(output);
-          $('#next_card').html("<a href='/round/" + msg.round_id + "/next_card'>Next Card</a>");
+          $('#next_card').html("<a href='/round/" + msg.round_id + "/next_card'>Continue</a>");
           $('.answer').show();          
       });
     });
@@ -44,9 +44,9 @@ $(document).ready(function() {
         console.log(msg);
         if (msg.redirect) {
             // data.redirect contains the string URL to redirect to
-            console.log("in redirect!");
-            console.log(msg.redirect);
-            window.location.href = msg.redirect;
+            $('.answer').html("<div>Deck Finished! There were " + msg.num_cards + " cards and you got " + msg.percentage +"% correct.</div>");
+            $('#dash_redirect').html("<a href='/user_dashboard'>Dashboard</a>");
+            // window.location.href = msg.redirect;
         }
         else {
           $('.answer').hide();
