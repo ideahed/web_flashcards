@@ -22,25 +22,22 @@ $(document).ready(function() {
 
   // function checkBox() {
   $('#user_name').on('keyup', function(){
-    console.log("got it");
-    if ($(this).val().length >= 4) {
+    if ($(this).val().length >= 6) {
       $('#user_name_check').show();
     } else {
       $('#user_name_check').hide();
     }
   });
 
-  $('#user_email').on('keyup', function(){
-    console.log("got it");
-    if ($(this).val().length >= 4) {
-      $('#user_email_check').show();
-    } else {
-      $('#user_email_check').hide();
-    }
-  });
+  // $('#user_email').on('keyup', function(){
+  //   if ($(this).val().length >= ) {
+  //     $('#user_email_check').show();
+  //   } else {
+  //     $('#user_email_check').hide();
+  //   }
+  // });
 
   $('#user_pass').on('keyup', function(){
-    console.log("got it");
     if ($(this).val().length >= 4) {
       $('#user_pass_check').show();
     } else {

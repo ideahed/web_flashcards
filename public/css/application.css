@@ -44,6 +44,27 @@
   overflow: auto;
 }
 
+/*input:required:valid {
+  background-image: url(/images/valid.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+}*/
+
+/*input:required:invalid {
+  background-image: url(../images/check_mark.png);
+  background-position: right top;
+  background-color: red;
+}*/
+
+#create_user {
+  position: inline-block;
+}
+
+.check {
+  color: green;
+  position: inline;
+}
+
 .right_tab {
   position: absolute;
   bottom: 0;
