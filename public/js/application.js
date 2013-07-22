@@ -96,5 +96,4 @@ $(document).ready(function() {
   $('#add-another-card').on('click', function() {
   	$(".add-card").clone().toggle().prependTo("#add-more-cards");
   });
-
 });
