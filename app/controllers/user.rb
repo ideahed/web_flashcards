@@ -35,8 +35,7 @@ get '/new_deck'do
 end
 
 post '/create_deck' do
-  deck = Deck.create(params[:deck])
-  params[:cards].each { |card| deck.cards.create(card) }
+  create_deck_with_cards_or_just_cards(params)
   
   redirect '/user_dashboard'  
 end
