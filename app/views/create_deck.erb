@@ -1,18 +1,18 @@
 <div class='container'>
   <div>
   	<h3>Create a Deck</h3>
-    <form action='/create_deck' method="post">
-       <input type="text" placeholder="Deck Name" name="deck[name]">
+    <form name="createDeck" action='/create_deck' method="post">
+       <input type="text" placeholder="Deck Name" name="deck[name]" required>
        <br>
        <br>
-       <input type="text" placeholder="Card Term" name="cards[][term]">
+       <input type="text" placeholder="Card Term" name="cards[][term]" required>
        <br>
        <br>
-       <textarea  rows="10" cols="30" placeholder="Card Definition" name="cards[][definition]"></textarea>
+       <textarea  rows="10" cols="30" placeholder="Card Definition" name="cards[][definition]" required></textarea>
        <br>
        <br>
       <div id='add-more-cards'></div>
-      <input id='add-another-card' type="button" value="add another card">
+      <input id='add-another-card' type="button" value="add another card" required>
       <input type="submit" value="submit">
     </form>
 
