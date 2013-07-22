@@ -110,7 +110,7 @@ namespace :db do
   desc "Populate the database with dummy data by running db/seeds.rb"
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
-    SeedDB.fill_deck
+    SeedDB.fill_deck('spanish to english', [["hi", "hola"], ["I'm hungry", "tengo hambre"], ["this is fun", "esto esta divertido"]])
     SeedDB.fill_deck_with_csv_data
   end
 

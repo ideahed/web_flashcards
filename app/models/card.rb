@@ -3,4 +3,5 @@ class Card < ActiveRecord::Base
 
   validates :term, presence: true
   validates :definition, presence: true
+  validates :deck_id, presence: true
 end

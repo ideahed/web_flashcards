@@ -18,15 +18,8 @@ module FileParsing
   end
 end
 
-module PretendDeck
-  def self.deck_name(name)
-    deck = Deck.create(name: name)
-  end
-end
-
 module SeedDB
   include FileParsing
-  include PretendDeck
 
   def self.fill_deck_with_csv_data
     raw_file_array = FileParsing.read_file
@@ -36,12 +29,11 @@ module SeedDB
     end
   end
 
-  def self.fill_deck
-    deck = PretendDeck.deck_name("english_to_spanish")
-    # deck = Deck.find(2)
-    card_array = [["hi", "hola"], ["I'm hungry", "tengo hambre"], ["this is fun", "esto esta divertido"]]
+  def self.fill_deck(deck_name, card_array)
+    deck = Deck.new(name: deck_name)
     card_array.each do |card|  
       deck.cards << Card.create(term: card[0], definition: card[1])
     end
+    deck.save
   end
 end
